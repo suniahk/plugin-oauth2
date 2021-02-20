@@ -17,9 +17,13 @@
 
     <?= $this->form->label(t('User API URL'), 'oauth2_user_api_url') ?>
     <?= $this->form->text('oauth2_user_api_url', $values) ?>
+    
+    <?= $this->form->label(t('End Session Endpoint'), 'oauth2_end_session_endpoint') ?>
+    <?= $this->form->text('oauth2_end_session_endpoint', $values) ?>
 
     <?= $this->form->label(t('Scopes'), 'oauth2_scopes') ?>
     <?= $this->form->text('oauth2_scopes', $values) ?>
+    <p class="form-help"><?= t('Seperate each scope with a space.') ?></p>
 
     <?= $this->form->label(t('Username Key'), 'oauth2_key_username') ?>
     <?= $this->form->text('oauth2_key_username', $values) ?>
@@ -51,7 +55,10 @@
     <?= $this->form->label(t('Custom Login Text'), 'oauth2_custom_login_text') ?>
     <?= $this->form->text('oauth2_custom_login_text', $values) ?>
     <p class="form-help"><?= t('Enter the text you would prefer to see rather than the default "OAuth2 login".') ?></p>
-
+    
+    <?= $this->form->checkbox('oauth2_override_login_flow', t('Override Normal Login Flow'), 1) ?>
+    <p class="form-help"><?= t('Check this box if you want to use OAuth2 as your sole form of authentication.') ?></p>
+    
     <div class="form-actions">
         <input type="submit" value="<?= t('Save') ?>" class="btn btn-blue"/>
     </div>
