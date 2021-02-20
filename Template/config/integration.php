@@ -18,8 +18,8 @@
     <?= $this->form->label(t('User API URL'), 'oauth2_user_api_url') ?>
     <?= $this->form->text('oauth2_user_api_url', $values) ?>
     
-    <?= $this->form->label(t('End Session Endpoint'), 'oauth2_end_session_endpoint') ?>
-    <?= $this->form->text('oauth2_end_session_endpoint', $values) ?>
+    <?= $this->form->label(t('End Session URL'), 'oauth2_end_session_url') ?>
+    <?= $this->form->text('oauth2_end_session_url', $values) ?>
 
     <?= $this->form->label(t('Scopes'), 'oauth2_scopes') ?>
     <?= $this->form->text('oauth2_scopes', $values) ?>
