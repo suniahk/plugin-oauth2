@@ -106,6 +106,7 @@ class GenericOAuth2Provider extends Base implements OAuthAuthenticationProviderI
                 $this->helper->url->to('OAuthController', 'handler', array('plugin' => 'OAuth2'), '', true),
                 $this->getOAuthAuthorizeUrl(),
                 $this->getOAuthTokenUrl(),
+                $this->getOAuthEndSessionUrl(),
                 $this->getScopes()
             );
         }
@@ -192,6 +193,17 @@ class GenericOAuth2Provider extends Base implements OAuthAuthenticationProviderI
     public function getOAuthAuthorizeUrl()
     {
         return $this->configModel->get('oauth2_authorize_url');
+    }
+    
+    /**
+     * Get end session url
+     *
+     * @access public
+     * @return string
+     */
+    public function getOAuthEndSessionUrl()
+    {
+        return $this->configModel->get('oauth2_end_session_url');
     }
 
     /**
